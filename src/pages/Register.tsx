@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type { FC, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { User, Mail, Lock, ChevronDown, ShieldCheck } from 'lucide-react';
@@ -16,7 +17,7 @@ const containerVariants = {
 };
 const itemVariants = {
   hidden: { opacity: 0, y: 14 },
-  visible: { opacity: 1, y: 0, transition: { ease: [0.16, 1, 0.3, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
 };
 
 type Role = 'USER' | 'ADMIN';
@@ -25,7 +26,7 @@ const ROLES: { value: Role; label: string; description: string }[] = [
   { value: 'ADMIN', label: 'Admin', description: 'Full administrative privileges' },
 ];
 
-const Register: React.FC = () => {
+const Register: FC = () => {
   const { register, loading } = useAuth();
   const navigate = useNavigate();
 
@@ -62,7 +63,7 @@ const Register: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     setSubmitting(true);

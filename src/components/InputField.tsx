@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { LucideIcon, Eye, EyeOff } from 'lucide-react';
+import { useState } from 'react';
+import type { FC, InputHTMLAttributes } from 'react';
+import type { LucideIcon } from 'lucide-react';
+import { Eye, EyeOff } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   error?: string;
   icon?: LucideIcon;
 }
 
-export const InputField: React.FC<InputFieldProps> = ({
+export const InputField: FC<InputFieldProps> = ({
   label,
   error,
   icon: Icon,

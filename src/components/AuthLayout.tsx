@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ interface AuthLayoutProps {
   footerLinkTo?: string;
 }
 
-const FloatingBlob: React.FC<{ className: string; delay?: number }> = ({ className, delay = 0 }) => (
+const FloatingBlob: FC<{ className: string; delay?: number }> = ({ className, delay = 0 }) => (
   <motion.div
     className={`absolute rounded-full blur-3xl pointer-events-none ${className}`}
     animate={{
@@ -30,7 +30,7 @@ const FloatingBlob: React.FC<{ className: string; delay?: number }> = ({ classNa
   />
 );
 
-const AuthLayout: React.FC<AuthLayoutProps> = ({
+const AuthLayout: FC<AuthLayoutProps> = ({
   children,
   heading,
   subheading,

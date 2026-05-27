@@ -1,4 +1,5 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import type { FC, ReactNode } from 'react';
 import { authService, storage } from '../services/authService';
 import type { UserProfile } from '../services/authService';
 import toast from 'react-hot-toast';
@@ -21,7 +22,7 @@ interface AuthProviderProps {
   children: ReactNode;
 }
 
-export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+export const AuthProvider: FC<AuthProviderProps> = ({ children }) => {
   const [user, setUserState] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
