@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
-import AuthSwitch from './components/AuthSwitch';
+import { Component as AuthSwitch } from './components/ui/auth-switch';
 
 import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
